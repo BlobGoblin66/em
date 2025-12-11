@@ -1,43 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Slideshow</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow + Spotify</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
     <!-- Slideshow container -->
     <div id="slideshow"></div>
 
-    <!-- Overlay to start music -->
-    <div id="start-overlay">
-        <div class="message">Click to Start MusicBBB</div>
-    </div>
+    <!-- Grain overlay for film dissolve -->
+    <div id="grain"></div>
 
-    <!-- Spotify (hidden until clicked) -->
-<!-- Overlay to prompt click -->
-<div id="start-overlay">
-  <div class="message">Click here to start musicCCC</div>
-</div>
-
-<!-- Spotify embed -->
-<iframe
-  id="spotify-player"
-  data-testid="embed-iframe"
-  style="border-radius:12px; width:300px; height:80px; position:fixed; bottom:20px; left:20px; z-index:20; display:none;"
-  src="https://open.spotify.com/embed/playlist/0RO75eA9m1xzrRXcSR8TAx?utm_source=generator"
-  frameborder="0"
-  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-></iframe>
+    <!-- Tiny Spotify player -->
+    <iframe
+        id="spotify-player"
+        src="https://open.spotify.com/embed/playlist/0RO75eA9m1xzrRXcSR8TAx?utm_source=generator"
+        width="200"
+        height="80"
+        frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        style="border-radius:12px; position:fixed; bottom:20px; right:20px; z-index:10;">
+    </iframe>
 
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
