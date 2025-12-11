@@ -8,48 +8,40 @@ body, html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: #000;
     font-family: sans-serif;
+    background: #000;
 }
 
-#spotify-player {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 20;
-}
-
+/* Slideshow full screen */
 #slideshow {
     position: fixed;
     inset: 0;
     background-size: cover;
     background-position: center;
-    transition: opacity 1.2s ease-in-out, filter 1.2s ease-in-out;
+    transition: opacity 1.8s ease-in-out, filter 1.8s ease-in-out;
     opacity: 1;
 }
 
-/* Overlay that requires user action to start music */
-#start-overlay {
+/* Grain overlay */
+#grain {
+    pointer-events: none;
     position: fixed;
     inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(4px);
-    cursor: pointer;
-    z-index: 10;
+    background-image: url('images/grain.png'); /* <-- replace with your hosted grain image */
+    background-size: cover;
+    mix-blend-mode: overlay;
+    opacity: 0.18;
+    animation: grainFlicker 0.6s steps(2, end) infinite;
+    z-index: 5; /* above slideshow but below Spotify */
 }
 
-#start-overlay .message {
-    color: red;
-    font-size: 2rem;
-    letter-spacing: 1px;
+/* Optional flicker */
+@keyframes grainFlicker {
+    0% { opacity: 0.15; filter: brightness(1.05); }
+    100% { opacity: 0.20; filter: brightness(0.98); }
 }
 
-
-
+/* Spotify iframe styling */
+#spotify-player {
+    /* already set inline in HTML for simplicity */
+}
