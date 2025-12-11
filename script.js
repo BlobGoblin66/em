@@ -1,6 +1,3 @@
-// -------------------------
-// 1. IMAGES LIST
-// -------------------------
 const images = [
     "images/frank1.png",
     "images/frank2.png",
@@ -8,37 +5,40 @@ const images = [
     "images/frank4.png"
 ];
 
-// -------------------------
-// 2. SLIDESHOW SETTINGS
-// -------------------------
 let current = 0;
-const interval = 5000; // 5 seconds per slide
+const interval = 5000; // milliseconds per slide
 
-const slideshow = document.getElementById("slideshow");
+// Shuffle images at start
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+shuffle(images);
+
+const layer1 = document.getElementById("slideshow1");
+const layer2 = document.getElementById("slideshow2");
 
 // Preload images
-images.forEach(src => {
-    const img = new Image();
-    img.src = src;
-});
+images.forEach(src => new Image().src = src);
 
-// Set first image
-slideshow.style.backgroundImage = `url('${images[0]}')`;
+// Initialize
+layer1.style.backgroundImage = `url('${images[0]}')`;
+layer2.style.backgroundImage = `url('${images[1]}')`;
+layer2.style.opacity = 0;
 
-// Slideshow loop with film grain dissolve
+let topLayer = 1;
+
 setInterval(() => {
-    current = (current + 1) % images.length;
+    const nextIndex = (current + 1) % images.length;
+    const fadeInLayer = topLayer === 1 ? layer2 : layer1;
+    const fadeOutLayer = topLayer === 1 ? layer1 : layer2;
 
-    // fade out
-    slideshow.style.opacity = 0;
-    slideshow.style.filter = "blur(2px) brightness(1.1)";
+    fadeInLayer.style.backgroundImage = `url('${images[nextIndex]}')`;
+    fadeInLayer.style.opacity = 1;
+    fadeOutLayer.style.opacity = 0;
 
-    setTimeout(() => {
-        // switch image
-        slideshow.style.backgroundImage = `url('${images[current]}')`;
-
-        // fade in
-        slideshow.style.opacity = 1;
-        slideshow.style.filter = "blur(0px) brightness(1.0)";
-    }, 1800); // match CSS transition
+    topLayer = topLayer === 1 ? 2 : 1;
+    current = nextIndex;
 }, interval);
