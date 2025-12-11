@@ -17,7 +17,8 @@ body, html {
     inset: 0;
     background-size: cover;
     background-position: center;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity 1.2s ease-in-out, filter 1.2s ease-in-out;
+    opacity: 1;
 }
 
 /* Overlay that requires user action to start music */
@@ -47,3 +48,4 @@ body, html {
     width: 1px;
     height: 1px;
 }
+
