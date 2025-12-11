@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Slideshow</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Slideshow container -->
+    <div id="slideshow"></div>
+
+    <!-- Overlay to start music -->
+    <div id="start-overlay">
+        <div class="message">Click to Start Music</div>
+    </div>
+
+    <!-- Spotify (hidden until clicked) -->
+    <iframe 
+        id="spotify-player"
+        style="opacity: 0; pointer-events: none;"
+        src="https://open.spotify.com/embed/playlist/PUT-YOUR-PLAYLIST-ID-HERE"
+        width="300"
+        height="80"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+    ></iframe>
+
+    <script src="script.js"></script>
+</body>
+</html>
