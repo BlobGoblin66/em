@@ -12,6 +12,17 @@ body, html {
     font-family: sans-serif;
 }
 
+#spotify-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 20;
+}
+
 #slideshow {
     position: fixed;
     inset: 0;
@@ -35,17 +46,10 @@ body, html {
 }
 
 #start-overlay .message {
-    color: white;
+    color: red;
     font-size: 2rem;
     letter-spacing: 1px;
 }
 
-/* Spotify tiny embed (hidden visually) */
-#spotify-player {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    width: 1px;
-    height: 1px;
-}
+
 
