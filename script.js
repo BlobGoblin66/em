@@ -45,10 +45,9 @@ const overlay = document.getElementById("start-overlay");
 const spotify = document.getElementById("spotify-player");
 
 overlay.addEventListener("click", () => {
-    // reveal Spotify so it can play
-    spotify.style.opacity = 1;
-
-    // Remove overlay
-    overlay.style.display = "none";
+  spotify.style.display = "block";  // reveal iframe
+  overlay.style.display = "none";   // hide overlay
 });
+
+
 
