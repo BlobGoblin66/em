@@ -4,10 +4,10 @@
 // Replace these with your own image paths.
 // If using GitHub Pages, put files in /images/ folder.
 const images = [
-    "images/pic1.jpg",
-    "images/pic2.jpg",
-    "images/pic3.jpg",
-    "images/pic4.jpg"
+    "images/frank1.png",
+    "images/frank2.png",
+    "images/frank3.png",
+    "images/frank4.png"
 ];
 
 // -------------------------
@@ -51,3 +51,4 @@ overlay.addEventListener("click", () => {
     // Remove overlay
     overlay.style.display = "none";
 });
+
