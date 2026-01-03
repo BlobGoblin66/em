@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slideshow + Spotify</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video + Playlist</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- Slideshow container -->
-    <div id="slideshow1" class="slideshow-layer"></div>
-    <div id="slideshow2" class="slideshow-layer"></div>
-
-    <!-- Grain overlay for film dissolve -->
-    <div id="grain"></div>
+    <!-- Background video -->
+    <video id="bg-video" autoplay muted loop playsinline>
+        <source src="videos/nudis.mp4" type="video/mp4">
+    </video>
 
     <!-- Tiny Spotify player -->
     <iframe
@@ -27,6 +25,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
